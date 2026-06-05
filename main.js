@@ -483,4 +483,92 @@ document.addEventListener('DOMContentLoaded', () => {
       setSliderPosition(e.clientX);
     });
   }
+
+  // 14. Interactive Space Inspector (Floor Plan) Logic
+  const floorRooms = document.querySelectorAll('.floor-room');
+  const inspectorPanel = document.getElementById('inspector-panel');
+  const inspectorImg = document.getElementById('inspector-img');
+  const inspectorTag = document.getElementById('inspector-tag');
+  const inspectorTitle = document.getElementById('inspector-room-title');
+  const inspectorSize = document.getElementById('inspector-size');
+  const inspectorHeight = document.getElementById('inspector-height');
+  const inspectorMaterials = document.getElementById('inspector-materials');
+  const inspectorLighting = document.getElementById('inspector-lighting');
+  const inspectorDesc = document.getElementById('inspector-desc');
+
+  const spaceSpecsData = {
+    'living': {
+      tag: '01 / TECHNICAL SPACE',
+      title: 'Double-Height Living Hall',
+      size: '3,450 sq ft',
+      height: '22 feet',
+      materials: 'Board-formed concrete, brass trim, Italian travertine',
+      lighting: 'Automated circadian brass fixtures & natural clerestory bands',
+      img: './assets/interior-living.png',
+      desc: 'Designed as the social core of the villa, this double-height volume combines monolithic raw concrete walls with delicate brass elements. The massive 22ft floor-to-ceiling glass doors open completely to frame the sea, creating a seamless transition from the interior hall to the outdoor cantilever deck.'
+    },
+    'master': {
+      tag: '02 / PRIVATE SUITE',
+      title: 'Oceanfront Master Suite',
+      size: '1,850 sq ft',
+      height: '11 feet',
+      materials: 'Local teak flooring, texturized limestone plaster, brass profiles',
+      lighting: 'Concealed warm cove LEDs, directional reading spotlights',
+      img: './assets/proj-villa-2.png',
+      desc: 'A private sanctuary positioned to catch the morning sun. Features fully pocketing glass doors that open to a private balcony overlooking the Bay of Bengal, an open-concept vanity detailed in brushed brass, and natural wood cladding that creates a soft, grounded contrast to the raw structural concrete.'
+    },
+    'pool': {
+      tag: '03 / RECREATION DECK',
+      title: 'Cantilever Deck & Pool',
+      size: '2,600 sq ft',
+      height: 'Open to Sky',
+      materials: 'Anti-slip volcanic ash tiles, stainless structural tensioners',
+      lighting: 'Submerged gold-hued pool beams, pathway marker LEDs',
+      img: './assets/proj-villa.png',
+      desc: 'A massive architectural projection suspended over the cliffside. The infinity swimming pool features crystal-clear water merging into the horizon, surrounded by thermal-treated limestone decks that remain cool under heavy coastal sunlight, providing structural stability and high-end outdoor luxury.'
+    },
+    'terrace': {
+      tag: '04 / SUNSET LOUNGE',
+      title: 'Sunset Terrace Lounge',
+      size: '1,400 sq ft',
+      height: 'Open to Sky',
+      materials: 'Exposed concrete benches, weather-proof teak wood, brass details',
+      lighting: 'Subtle step-lighting, central brass fire bowl glows',
+      img: './assets/hero-villa.png',
+      desc: 'Perched on the highest point of the structure, the Sunset Terrace offers unobstructed 360-degree panoramas of the Visakhapatnam shoreline. Detailed with built-in monolithic concrete lounge seating, weather-proof upholstery, and a central bronze fire element, it is engineered to withstand marine air while offering unmatched comfort.'
+    }
+  };
+
+  if (floorRooms.length > 0 && inspectorPanel) {
+    floorRooms.forEach(room => {
+      room.addEventListener('click', () => {
+        const roomId = room.getAttribute('data-room');
+        const specs = spaceSpecsData[roomId];
+        if (!specs) return;
+
+        // Toggle active states on paths
+        floorRooms.forEach(r => r.classList.remove('active'));
+        room.classList.add('active');
+
+        // Fade out visual panel
+        inspectorPanel.classList.add('fading');
+
+        // Swap contents after fade out animation completes
+        setTimeout(() => {
+          inspectorImg.src = specs.img;
+          inspectorImg.alt = specs.title;
+          inspectorTag.textContent = specs.tag;
+          inspectorTitle.textContent = specs.title;
+          inspectorSize.textContent = specs.size;
+          inspectorHeight.textContent = specs.height;
+          inspectorMaterials.textContent = specs.materials;
+          inspectorLighting.textContent = specs.lighting;
+          inspectorDesc.textContent = specs.desc;
+
+          // Fade back in
+          inspectorPanel.classList.remove('fading');
+        }, 400);
+      });
+    });
+  }
 });
