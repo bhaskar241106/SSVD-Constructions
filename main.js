@@ -572,4 +572,83 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 15. Scroll-Driven Spatial Zoom Logic (Apple-Style)
+  const zoomSection = document.getElementById('spatial-zoom');
+  const zoomWindow = document.getElementById('zoom-window');
+  const facadeImg = document.querySelector('.zoom-img-facade');
+  const interiorImg = document.querySelector('.zoom-img-interior');
+  const zoomNarrative = document.getElementById('zoom-narrative');
+
+  const handleSpatialZoom = () => {
+    if (!zoomSection || !zoomWindow || !facadeImg || !interiorImg) return;
+
+    const rect = zoomSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    // Check if the section has entered the view
+    if (rect.top <= 0 && rect.bottom >= windowHeight) {
+      // Calculate scroll progress (0 to 1) inside the section's active scroll range
+      const totalScrollable = rect.height - windowHeight;
+      const scrolled = -rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / totalScrollable));
+
+      // 1. Expand the frame window
+      const isMobile = window.innerWidth <= 768;
+      const startWidth = isMobile ? 85 : 70;
+      const startHeight = isMobile ? 50 : 60;
+      
+      const currentWidth = startWidth + (100 - startWidth) * Math.min(1, progress * 1.5); // Fill screen at progress 0.66
+      const currentHeight = startHeight + (100 - startHeight) * Math.min(1, progress * 1.5);
+      
+      zoomWindow.style.width = `${currentWidth}vw`;
+      zoomWindow.style.height = `${currentHeight}vh`;
+
+      // 2. Zoom the images
+      // Facade image scale goes from 1.08 to 1.3
+      const facadeScale = 1.08 + (1.3 - 1.08) * progress;
+      facadeImg.style.transform = `scale(${facadeScale})`;
+
+      // 3. Cross-fade to interior
+      // Interior opacity starts fading in at progress 0.45, hits 1 at progress 0.85
+      let interiorOpacity = 0;
+      if (progress > 0.45) {
+        interiorOpacity = Math.min(1, (progress - 0.45) / 0.4); 
+      }
+      interiorImg.style.opacity = interiorOpacity;
+
+      // Interior image scale starts at 1.25 and zooms down to 1.08
+      const interiorScale = 1.25 - (1.25 - 1.08) * progress;
+      interiorImg.style.transform = `scale(${interiorScale})`;
+
+      // 4. Reveal narrative text overlay
+      if (progress > 0.7) {
+        zoomNarrative.classList.add('active');
+      } else {
+        zoomNarrative.classList.remove('active');
+      }
+    } else if (rect.top > 0) {
+      // Reset to initial state
+      const isMobile = window.innerWidth <= 768;
+      zoomWindow.style.width = isMobile ? '85vw' : '70vw';
+      zoomWindow.style.height = isMobile ? '50vh' : '60vh';
+      facadeImg.style.transform = 'scale(1.08)';
+      interiorImg.style.opacity = '0';
+      interiorImg.style.transform = 'scale(1.25)';
+      zoomNarrative.classList.remove('active');
+    } else if (rect.bottom < windowHeight) {
+      // Lock at final state
+      zoomWindow.style.width = '100vw';
+      zoomWindow.style.height = '100vh';
+      facadeImg.style.transform = 'scale(1.3)';
+      interiorImg.style.opacity = '1';
+      interiorImg.style.transform = 'scale(1.08)';
+      zoomNarrative.classList.add('active');
+    }
+  };
+
+  // Add scroll event listener
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(handleSpatialZoom);
+  });
 });

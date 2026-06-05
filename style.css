@@ -2998,3 +2998,123 @@ a.detail-value:hover {
   font-weight: 400;
 }
 
+/* ==========================================================================
+   SCROLL-DRIVEN SPATIAL ZOOM SECTION (APPLE-STYLE)
+   ========================================================================== */
+
+.spatial-zoom-section {
+  position: relative;
+  height: 200vh; /* scroll buffer length */
+  width: 100vw;
+  background-color: var(--color-bg);
+  overflow: visible;
+  z-index: 15;
+}
+
+.zoom-sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-window-frame {
+  position: relative;
+  width: 70vw;
+  height: 60vh;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: width, height, transform;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .zoom-window-frame {
+    width: 85vw;
+    height: 50vh;
+  }
+}
+
+.zoom-img-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform, opacity;
+  transform: scale(1.08);
+}
+
+.zoom-img-facade {
+  z-index: 5;
+}
+
+.zoom-img-interior {
+  z-index: 6;
+  opacity: 0;
+  transform: scale(1.2);
+}
+
+.zoom-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, 0.6) 100%);
+  z-index: 7;
+}
+
+.zoom-narrative {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%) translate3d(0, 30px, 0);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zoom-narrative.active {
+  opacity: 1;
+  transform: translateX(-50%) translate3d(0, 0, 0);
+}
+
+.narrative-tag {
+  font-family: var(--font-nav);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--color-luxury);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.narrative-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--color-bg);
+  line-height: 1.35;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.narrative-desc {
+  font-size: 0.85rem;
+  color: rgba(247, 244, 239, 0.75);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
