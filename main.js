@@ -455,6 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const handleMove = (e) => {
       if (!isDragging) return;
+      if (e.cancelable) e.preventDefault(); // Prevent screen scroll while dragging slider
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       setSliderPosition(clientX);
     };
@@ -474,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mobile dragging
     sliderHandle.addEventListener('touchstart', startDrag);
-    window.addEventListener('touchmove', handleMove);
+    window.addEventListener('touchmove', handleMove, { passive: false });
     window.addEventListener('touchend', stopDrag);
     
     // Direct click snap

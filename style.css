@@ -2783,6 +2783,12 @@ a.detail-value:hover {
   box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.02);
 }
 
+@media (max-width: 480px) {
+  .blueprint-wrapper {
+    padding: 1rem;
+  }
+}
+
 .blueprint-svg {
   width: 100%;
   height: auto;
