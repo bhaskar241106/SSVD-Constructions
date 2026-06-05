@@ -485,8 +485,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 14. Interactive Space Inspector (Floor Plan) Logic
-  const floorRooms = document.querySelectorAll('.floor-room');
+  // 14. Interactive Space Inspector (Blueprint Explorer) Logic
+  const propTabs = document.querySelectorAll('.selector-tab');
+  const layerTabs = document.querySelectorAll('.layer-tab');
+  const blueprints = document.querySelectorAll('.blueprint-svg');
+  const inspectorParent = document.getElementById('inspector-grid-parent');
+  const blueprintColTitle = document.getElementById('blueprint-col-title');
+
   const inspectorPanel = document.getElementById('inspector-panel');
   const inspectorImg = document.getElementById('inspector-img');
   const inspectorTag = document.getElementById('inspector-tag');
@@ -498,6 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const inspectorDesc = document.getElementById('inspector-desc');
 
   const spaceSpecsData = {
+    // 1. Cliff Villa Specs
     'living': {
       tag: '01 / TECHNICAL SPACE',
       title: 'Double-Height Living Hall',
@@ -537,38 +543,197 @@ document.addEventListener('DOMContentLoaded', () => {
       lighting: 'Subtle step-lighting, central brass fire bowl glows',
       img: './assets/hero-villa.png',
       desc: 'Perched on the highest point of the structure, the Sunset Terrace offers unobstructed 360-degree panoramas of the Visakhapatnam shoreline. Detailed with built-in monolithic concrete lounge seating, weather-proof upholstery, and a central bronze fire element, it is engineered to withstand marine air while offering unmatched comfort.'
+    },
+    // 2. Smart Duplex Specs
+    'dup-living': {
+      tag: '01 / TECHNICAL SPACE',
+      title: 'Duplex Living Lounge',
+      size: '1,420 sq ft',
+      height: '10 feet',
+      materials: 'Polished microcement, fluted oak panels, matte black steel',
+      lighting: 'Smart dimmable tracks, floating perimeter gold profile rails',
+      img: './assets/about-detail.png',
+      desc: 'A sleek, contemporary open lounge space designed for medium duplex layouts. Heavy board-formed concrete pillars contrast against fluted wood siding and steel windows, offering thermal mass and refined architectural textures.'
+    },
+    'dup-kitchen': {
+      tag: '02 / MODULAR UTILITY',
+      title: 'Modular Kitchen Area',
+      size: '640 sq ft',
+      height: '10 feet',
+      materials: 'Brushed gold countertops, grey quartz island, lacquered wood',
+      lighting: 'Task under-cabinet strips, warm pendant design bulbs',
+      img: './assets/proj-comm-2.png',
+      desc: 'An integrated culinary workspace prioritizing linear spatial efficiency. Built-in storage, concealed electrical conduits, and heavy heat-resistant quartz elements align utility with high design.'
+    },
+    'dup-master': {
+      tag: '03 / PRIVATE CHAMBER',
+      title: 'Duplex Master Bedroom',
+      size: '980 sq ft',
+      height: '10 feet',
+      materials: 'Washed linen wallpaper, engineered walnut planks, brass fittings',
+      lighting: 'Circadian dimming system, reading spotlights, accent warm lights',
+      img: './assets/proj-apt.png',
+      desc: 'Positioned on the north wing to receive diffused daylight. Features minimal metal frames, high-performance acoustic isolation layers, and warm timber ceilings for maximum restfulness.'
+    },
+    'dup-balcony': {
+      tag: '04 / RECREATION DECK',
+      title: 'Balcony Deck',
+      size: '520 sq ft',
+      height: 'Open to Sky',
+      materials: 'Granite cobbles, treated cedar framing, glass guard rails',
+      lighting: 'Recessed low-glare downlights, soft perimeter step markers',
+      img: './assets/proj-comm.png',
+      desc: 'A floating pocket balcony designed to extend the interior lounge outwards. Offers direct views of Vizag Harbor, framed by a concrete parapet and protective glass panels.'
+    },
+    // 3. Compact Individual Home Specs
+    'ind-entrance': {
+      tag: '01 / ENTRANCE HALLWAY',
+      title: 'Entrance Vestibule',
+      size: '480 sq ft',
+      height: '9.5 feet',
+      materials: 'Local Andhra granite flags, brass inlay strips, textured plaster',
+      lighting: 'Warm recessed spotlights, side vertical linear sconces',
+      img: './assets/contact-bg.png',
+      desc: 'A welcoming threshold introducing the home\'s tactile palette. Employs Visakhapatnam river stone finishes and robust security detailing, establishing a solid, protective entrance corridor.'
+    },
+    'ind-bed': {
+      tag: '02 / PRIVATE CHAMBER',
+      title: 'Primary Bedroom',
+      size: '850 sq ft',
+      height: '9.5 feet',
+      materials: 'Vitrified tiles, sound-absorbing plaster, solid timber paneling',
+      lighting: 'Central modular light grid, warm task lamps',
+      img: './assets/proj-ind.png',
+      desc: 'A highly functional private bedroom emphasizing spatial layout efficiency. Features space-saving built-in wall cabinets, structural brick lining, and large window profiles for cross ventilation.'
+    },
+    'ind-dining': {
+      tag: '03 / UTILITY SPACE',
+      title: 'Dining Area',
+      size: '620 sq ft',
+      height: '9.5 feet',
+      materials: 'Polished white terrazzo, local brick facing, teak wood trim',
+      lighting: 'Adjustable spot tracks, central statement pendant',
+      img: './assets/materials-banner.png',
+      desc: 'A centralized space connecting the kitchen and entrance hall. Outfitted with polished terrazzo floors and exposed brick elements that retain heat and represent lasting building craftsmanship.'
+    },
+    'ind-utility': {
+      tag: '04 / TECHNICAL UTILITY',
+      title: 'Utility & Wiring Chamber',
+      size: '340 sq ft',
+      height: '9.5 feet',
+      materials: 'Exposed brickwork, anti-moisture sealant, concrete flags',
+      lighting: 'High-output utility tubes, technical indicator panel lights',
+      img: './assets/about-detail.png',
+      desc: 'The technical nervous system of the individual home. Houses centralized electrical breaker panels, plumbing manifolds, inverter arrays, and smart structural wiring nodes for easy maintenance.'
     }
   };
 
-  if (floorRooms.length > 0 && inspectorPanel) {
-    floorRooms.forEach(room => {
+  // Helper to load room specs
+  const loadRoomSpecs = (roomId) => {
+    const specs = spaceSpecsData[roomId];
+    if (!specs || !inspectorPanel) return;
+
+    inspectorPanel.classList.add('fading');
+
+    setTimeout(() => {
+      inspectorImg.src = specs.img;
+      inspectorImg.alt = specs.title;
+      inspectorTag.textContent = specs.tag;
+      inspectorTitle.textContent = specs.title;
+      inspectorSize.textContent = specs.size;
+      inspectorHeight.textContent = specs.height;
+      inspectorMaterials.textContent = specs.materials;
+      inspectorLighting.textContent = specs.lighting;
+      inspectorDesc.textContent = specs.desc;
+      inspectorPanel.classList.remove('fading');
+    }, 400);
+  };
+
+  // Room click listeners across all SVGs
+  const registerRoomClickListeners = () => {
+    const allRooms = document.querySelectorAll('.floor-room');
+    allRooms.forEach(room => {
       room.addEventListener('click', () => {
         const roomId = room.getAttribute('data-room');
-        const specs = spaceSpecsData[roomId];
-        if (!specs) return;
-
-        // Toggle active states on paths
-        floorRooms.forEach(r => r.classList.remove('active'));
+        
+        // Remove active class from all rooms in the parent SVG
+        const parentSvg = room.closest('svg');
+        if (parentSvg) {
+          parentSvg.querySelectorAll('.floor-room').forEach(r => r.classList.remove('active'));
+        }
         room.classList.add('active');
+        loadRoomSpecs(roomId);
+      });
+    });
+  };
 
-        // Fade out visual panel
-        inspectorPanel.classList.add('fading');
+  registerRoomClickListeners();
 
-        // Swap contents after fade out animation completes
-        setTimeout(() => {
-          inspectorImg.src = specs.img;
-          inspectorImg.alt = specs.title;
-          inspectorTag.textContent = specs.tag;
-          inspectorTitle.textContent = specs.title;
-          inspectorSize.textContent = specs.size;
-          inspectorHeight.textContent = specs.height;
-          inspectorMaterials.textContent = specs.materials;
-          inspectorLighting.textContent = specs.lighting;
-          inspectorDesc.textContent = specs.desc;
+  // Property Selectors
+  if (propTabs.length > 0) {
+    propTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        propTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
 
-          // Fade back in
-          inspectorPanel.classList.remove('fading');
-        }, 400);
+        const property = tab.getAttribute('data-property');
+        
+        // Toggle blueprint SVGs visibility
+        blueprints.forEach(svg => svg.classList.remove('active-blueprint'));
+        
+        let targetSvg;
+        let defaultRoomId;
+        if (property === 'villa') {
+          targetSvg = document.getElementById('svg-villa');
+          blueprintColTitle.textContent = 'CLIFF VILLA BLUEPRINT (LVL 01)';
+          defaultRoomId = 'living';
+        } else if (property === 'duplex') {
+          targetSvg = document.getElementById('svg-duplex');
+          blueprintColTitle.textContent = 'SMART DUPLEX BLUEPRINT (LVL 01)';
+          defaultRoomId = 'dup-living';
+        } else if (property === 'house') {
+          targetSvg = document.getElementById('svg-house');
+          blueprintColTitle.textContent = 'INDIVIDUAL HOME BLUEPRINT (LVL 01)';
+          defaultRoomId = 'ind-entrance';
+        }
+
+        if (targetSvg) {
+          targetSvg.classList.add('active-blueprint');
+          
+          // Reset rooms active state in new SVG
+          targetSvg.querySelectorAll('.floor-room').forEach(r => r.classList.remove('active'));
+          const firstRoom = targetSvg.querySelector(`[data-room="${defaultRoomId}"]`);
+          if (firstRoom) {
+            firstRoom.classList.add('active');
+          }
+          
+          // Load default room specs
+          loadRoomSpecs(defaultRoomId);
+        }
+      });
+    });
+  }
+
+  // Layer Selectors
+  if (layerTabs.length > 0 && inspectorParent) {
+    layerTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        layerTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const layer = tab.getAttribute('data-layer');
+        
+        // Remove existing layer classes from parent grid
+        inspectorParent.classList.remove('show-architectural', 'show-structural', 'show-electrical');
+        
+        // Add new active layer class
+        if (layer === 'architectural') {
+          inspectorParent.classList.add('show-architectural');
+        } else if (layer === 'structural') {
+          inspectorParent.classList.add('show-structural');
+        } else if (layer === 'electrical') {
+          inspectorParent.classList.add('show-electrical');
+        }
       });
     });
   }
