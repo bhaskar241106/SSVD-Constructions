@@ -3380,9 +3380,9 @@ a.detail-value:hover {
 
 
 /* Background Images fixed for Vite Production Build */
-.hero-bg { background-image: url('./assets/hero-villa.png'); }
-.zoom-img-facade { background-image: url('./assets/hero-villa.png'); }
-.zoom-img-interior { background-image: url('./assets/interior-living.png'); }
-.visual-break-bg { background-image: url('./assets/materials-banner.png'); }
-.contact-bg { background-image: url('./assets/contact-bg.png'); }
+.hero-bg { background-image: url('/assets/hero-villa.png'); }
+.zoom-img-facade { background-image: url('/assets/hero-villa.png'); }
+.zoom-img-interior { background-image: url('/assets/interior-living.png'); }
+.visual-break-bg { background-image: url('/assets/materials-banner.png'); }
+.contact-bg { background-image: url('/assets/contact-bg.png'); }
 

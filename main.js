@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Luxury Villas',
       timeline: '22 Months',
       scale: '12,500 sq ft',
-      img: './assets/proj-villa.png',
+      img: '/assets/proj-villa.png',
       desc: 'Perched on the scenic cliffs of Rushikonda, the Rushikonda Cliff Villa is an architectural statement built with high-grade exposed concrete and local teakwood. The structure features floor-to-ceiling glass panes opening to the Bay of Bengal and a stunning infinity swimming pool that cantilevers over the cliff edges. Structured to endure coastal cyclonic pressures, it incorporates rust-proof structural reinforcements and smart rain-harvesting technologies, perfectly blending modern beach architecture with elite Indian craftsmanship.'
     },
     'proj-card-2': {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Apartments & Residential Communities',
       timeline: '34 Months',
       scale: '110,000 sq ft',
-      img: './assets/proj-apt.png',
+      img: '/assets/proj-apt.png',
       desc: 'Located along the iconic Beach Road in Vizag, the Bayview Premium Enclave comprises 45 state-of-the-art sea-facing apartments. The facade utilizes locally sourced Andhra granites, smart wind-barrier panels, and desktop planters, and intelligent microclimate terraces. Engineered with earthquake-resistant pile foundations and low-carbon green cement, the building meets the highest sustainability standards while offering private spas and automated smart-home interiors.'
     },
     'proj-card-3': {
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Commercial Buildings',
       timeline: '28 Months',
       scale: '85,000 sq ft',
-      img: './assets/proj-comm.png',
+      img: '/assets/proj-comm.png',
       desc: 'Serving as a premier technology hub at the Madhurawada IT SEZ, The V-Spire Tower boasts a dramatic helical concrete structure and low-emission glass glazing. Designed to maximize natural light while mitigating coastal heat, it incorporates column-free office layouts utilizing post-tensioned concrete slab engineering. Complete with solar power grids, smart water treatment plants, and premium corporate lounges, it sets a benchmark for IT offices in Andhra Pradesh.'
     },
     'proj-card-4': {
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Industrial Facilities',
       timeline: '18 Months',
       scale: '240,000 sq ft',
-      img: './assets/proj-ind.png',
+      img: '/assets/proj-ind.png',
       desc: 'A massive, heavy-load industrial logistics facility located near Kakinada Port. Engineered to support heavy container traffic, the terminal combines solid pile foundation layouts with a 120-meter clear-span structural steel truss canopy. The industrial floor is constructed using specialized high-strength concrete mixes combined with metal fiber reinforcement and laser-guided floor levelers to ensure absolute structural precision and long-term utility.'
     },
     'proj-card-5': {
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Commercial Buildings',
       timeline: '24 Months',
       scale: '65,000 sq ft',
-      img: './assets/proj-comm-2.png',
+      img: '/assets/proj-comm-2.png',
       desc: 'Positioned in a primary commercial zone of Vizag, Aurelia Commercial Plaza is a luxury shopping and dining terminal. Designed with massive board-formed concrete pillars, geometric brass metal canopies, and double-height retail outlets. The plaza integrates an eco-friendly central ventilation system, robust storm-water management suitable for heavy monsoons, and elegant water columns reflecting the architectural forms.'
     },
     'proj-card-6': {
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Luxury Villas',
       timeline: '26 Months',
       scale: '18,500 sq ft',
-      img: './assets/proj-villa-2.png',
+      img: '/assets/proj-villa-2.png',
       desc: 'A premium shoreline villa development comprising bespoke architectural estates at Beach Road. Each estate blends raw concrete structural beauty with refined local teak cladding and extensive glass fronts that offer unobstructed ocean panoramas. Designed with structural retaining seawalls, high-wind windbreaks, smart backup power systems, and landscape design showcasing native coastal vegetation.'
     }
   };
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 10. Premium Audio Welcome Narration
-  const welcomeAudio = new Audio('./assets/welcome.mp3');
+  const welcomeAudio = new Audio('/assets/welcome.mp3');
   let welcomePlayed = false;
 
   const playWelcome = () => {
@@ -505,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
       height: '22 feet',
       materials: 'Board-formed concrete, brass trim, Italian travertine',
       lighting: 'Automated circadian brass fixtures & natural clerestory bands',
-      img: './assets/interior-living.png',
+      img: '/assets/interior-living.png',
       desc: 'Designed as the social core of the villa, this double-height volume combines monolithic raw concrete walls with delicate brass elements. The massive 22ft floor-to-ceiling glass doors open completely to frame the sea, creating a seamless transition from the interior hall to the outdoor cantilever deck.'
     },
     'master': {
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
       height: '11 feet',
       materials: 'Local teak flooring, texturized limestone plaster, brass profiles',
       lighting: 'Concealed warm cove LEDs, directional reading spotlights',
-      img: './assets/proj-villa-2.png',
+      img: '/assets/proj-villa-2.png',
       desc: 'A private sanctuary positioned to catch the morning sun. Features fully pocketing glass doors that open to a private balcony overlooking the Bay of Bengal, an open-concept vanity detailed in brushed brass, and natural wood cladding that creates a soft, grounded contrast to the raw structural concrete.'
     },
     'pool': {
@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
       height: 'Open to Sky',
       materials: 'Anti-slip volcanic ash tiles, stainless structural tensioners',
       lighting: 'Submerged gold-hued pool beams, pathway marker LEDs',
-      img: './assets/proj-villa.png',
+      img: '/assets/proj-villa.png',
       desc: 'A massive architectural projection suspended over the cliffside. The infinity swimming pool features crystal-clear water merging into the horizon, surrounded by thermal-treated limestone decks that remain cool under heavy coastal sunlight, providing structural stability and high-end outdoor luxury.'
     },
     'terrace': {
@@ -535,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
       height: 'Open to Sky',
       materials: 'Exposed concrete benches, weather-proof teak wood, brass details',
       lighting: 'Subtle step-lighting, central brass fire bowl glows',
-      img: './assets/hero-villa.png',
+      img: '/assets/hero-villa.png',
       desc: 'Perched on the highest point of the structure, the Sunset Terrace offers unobstructed 360-degree panoramas of the Visakhapatnam shoreline. Detailed with built-in monolithic concrete lounge seating, weather-proof upholstery, and a central bronze fire element, it is engineered to withstand marine air while offering unmatched comfort.'
     }
   };
