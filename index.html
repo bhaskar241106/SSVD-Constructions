@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SSVD Constructions builds enduring landmarks, luxury villas, commercial headquarters, and legacy-driven projects. Trusted engineering, precision, and craftsmanship.">
+  <title>SSVD Constructions | Architectural Excellence & Enduring Craftsmanship</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome / Lucide Icons via CDN for clean line icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Cinematic Entrance Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo-main">SSVD</div>
+      <div class="preloader-logo-sub">CONSTRUCTIONS</div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar" id="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Navigation -->
+  <header id="main-header" class="header-transparent">
+    <div class="nav-container">
+      <a href="#home" class="logo" id="nav-logo">
+        <span class="logo-main">SSVD</span>
+        <span class="logo-sub">CONSTRUCTIONS</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="desktop-nav">
+        <a href="#home" class="nav-link active" id="link-home">Home</a>
+        <a href="#about" class="nav-link" id="link-about">About</a>
+        <a href="#projects" class="nav-link" id="link-projects">Projects</a>
+        <a href="#services" class="nav-link" id="link-services">Services</a>
+        <a href="#process" class="nav-link" id="link-process">Process</a>
+        <a href="#contact" class="nav-link" id="link-contact">Contact</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="nav-cta-wrapper">
+        <a href="#contact" class="btn-nav-cta" id="btn-request-consultation">Request Consultation</a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="btn-mobile-toggle" aria-label="Toggle Menu">
+          <span class="bar bar-top"></span>
+          <span class="bar bar-bottom"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-menu-overlay" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav-links">
+        <a href="#home" class="mobile-nav-link" id="mob-link-home">Home</a>
+        <a href="#about" class="mobile-nav-link" id="mob-link-about">About</a>
+        <a href="#projects" class="mobile-nav-link" id="mob-link-projects">Projects</a>
+        <a href="#services" class="mobile-nav-link" id="mob-link-services">Services</a>
+        <a href="#process" class="mobile-nav-link" id="mob-link-process">Process</a>
+        <a href="#contact" class="mobile-nav-link" id="mob-link-contact">Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <p class="mobile-contact-title">Start a Conversation</p>
+        <a href="mailto:rajuyadav433793@gmail.com" class="mobile-email">rajuyadav433793@gmail.com</a>
+        <a href="tel:+919849245377" class="mobile-phone">+91 98492 45377</a>
+        <a href="tel:+919391150433" class="mobile-phone">+91 93911 50433</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg-container">
+        <div class="hero-bg" style="background-image: url('./assets/hero-villa.png');"></div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-container">
+          <p class="hero-tagline animate-fade-in">PRESTIGE. PERMANENCE. PRECISION.</p>
+          <h1 class="hero-headline animate-fade-in-delayed">BUILDING WHAT<br>OUTLASTS US</h1>
+          <p class="hero-subheadline animate-fade-in-delayed-more">
+            Every structure tells a story. We ensure it stands for generations.
+          </p>
+          <div class="hero-actions animate-fade-in-delayed-more">
+            <a href="#projects" class="btn btn-primary" id="btn-hero-projects">View Projects</a>
+            <a href="#contact" class="btn btn-secondary" id="btn-hero-start">Start Your Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">SCROLL</span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section scroll-reveal">
+      <div class="section-container">
+        <div class="about-grid">
+          <!-- Left side - Title -->
+          <div class="about-left">
+            <span class="section-subtitle">THE SSVD LEGACY</span>
+            <h2 class="about-title">BUILT ON DISCIPLINE.<br>DRIVEN BY VISION.</h2>
+            <div class="about-image-wrapper">
+              <img src="./assets/about-detail.png" alt="Raw architectural concrete detail showing craftsmanship and geometric shadows" class="about-img">
+            </div>
+          </div>
+          <!-- Right side - Story -->
+          <div class="about-right">
+            <div class="about-text-content">
+              <p class="about-lead">
+                SSVD Constructions does not simply assemble concrete, glass, and steel. We create enduring landmarks, foster lifelong client trust, and build legacy properties that stand as architectural achievements.
+              </p>
+              <p class="about-body">
+                Founded on the principles of extreme engineering precision and uncompromising craftsmanship, we serve as the partner of choice for visionary clients, premier architecture firms, and luxury estate developers. From high-end custom villas to iconic commercial spaces, our multidisciplinary team handles every detail with meticulous care.
+              </p>
+              <p class="about-body">
+                We believe that construction is a responsibility. What we build today shapes the skyline and defines communities for generations. This long-term worldview guides our commitment to quality, financial transparency, and architectural integrity.
+              </p>
+              
+              <!-- Core Philosophy Quote -->
+              <div class="about-philosophy-box">
+                <span class="philosophy-quote-mark">“</span>
+                <p class="philosophy-text">
+                  Quality is not an attribute we add at the end of a project; it is the discipline with which we lay the very first stone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership-section scroll-reveal">
+      <div class="section-container">
+        <span class="section-subtitle">OUR FOUNDER & LEADERSHIP</span>
+        <div class="leadership-grid">
+          <!-- Left side: Founder Image Placeholder -->
+          <div class="leadership-image-wrapper">
+            <img src="./assets/founder.jpg" alt="B. N. Raju, Founder of SSVD Constructions" class="leadership-img">
+          </div>
+          <!-- Right side: Founder details -->
+          <div class="leadership-details">
+            <h2 class="leadership-title">B. N. Raju</h2>
+            <p class="leadership-role">Founder</p>
+            
+            <p class="leadership-bio">
+              With decades of construction mastery and heavy structural experience, B. N. Raju founded SSVD Constructions to represent a new standard of building integrity in Visakhapatnam. Guided by the values of discipline, engineering precision, and client trust, he oversees the architectural planning, structural execution, and delivery protocols for all premium projects.
+            </p>
+            
+            <div class="founder-contact-card">
+              <span class="card-subtitle">FOUNDER CONTACT DETAILS</span>
+              
+              <div class="contact-info-block">
+                <div class="contact-sub-item">
+                  <span class="info-label">Direct Lines</span>
+                  <a href="tel:+919849245377" class="info-val link-underline">+91 98492 45377</a>
+                  <a href="tel:+919391150433" class="info-val link-underline">+91 93911 50433</a>
+                </div>
+                
+                <div class="contact-sub-item">
+                  <span class="info-label">Direct Email</span>
+                  <a href="mailto:rajuyadav433793@gmail.com" class="info-val link-underline">rajuyadav433793@gmail.com</a>
+                </div>
+                
+                <div class="contact-sub-item">
+                  <span class="info-label">Headquarters Address</span>
+                  <span class="info-val address-text">
+                    19-1/1, Ganesh Nagar,<br>
+                    Narasimha Nagar,<br>
+                    Visakhapatnam – 530 017 (A.P.)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section scroll-reveal">
+      <div class="section-container">
+        <div class="stats-grid">
+          <div class="stat-item" id="stat-projects">
+            <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item" id="stat-experience">
+            <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item" id="stat-clients">
+            <span class="stat-number" data-target="200">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Clients Served</span>
+          </div>
+          <div class="stat-item" id="stat-commitment">
+            <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label">Commitment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section scroll-reveal">
+      <div class="section-container">
+        <div class="services-header">
+          <div>
+            <span class="section-subtitle">OUR CAPABILITIES</span>
+            <h2 class="services-title">ARCHITECTURAL GRID & ENGINEERING SERVICES</h2>
+          </div>
+          <div class="services-header-text">
+            <p>We combine deep engineering intelligence with sophisticated craftsmanship to provide a comprehensive, elite suite of construction solutions.</p>
+          </div>
+        </div>
+        
+        <!-- Architectural Services Grid -->
+        <div class="services-grid" id="services-interactive-grid">
+          
+          <div class="service-item" data-bg="./assets/proj-villa.png" id="service-residential">
+            <div class="service-number">01</div>
+            <div class="service-content">
+              <h3 class="service-name">Residential Construction</h3>
+              <p class="service-desc">Luxury private estates, modern custom villas, and high-end generational homes tailored to the most demanding architectural standards.</p>
+            </div>
+            <div class="service-arrow"><i data-lucide="arrow-up-right"></i></div>
+          </div>
+
+          <div class="service-item" data-bg="./assets/proj-apt.png" id="service-commercial">
+            <div class="service-number">02</div>
+            <div class="service-content">
+              <h3 class="service-name">Commercial Development</h3>
+              <p class="service-desc">State-of-the-art office spaces, corporate headquarters, retail environments, and boutique hospitality architecture.</p>
+            </div>
+            <div class="service-arrow"><i data-lucide="arrow-up-right"></i></div>
+          </div>
+
+          <div class="service-item" data-bg="./assets/proj-ind.png" id="service-structural">
+            <div class="service-number">03</div>
+            <div class="service-content">
+              <h3 class="service-name">Structural Engineering</h3>
+              <p class="service-desc">Rigorous engineering design, structural analysis, seismic retrofitting, and robust foundation layouts that ensure centuries-long durability.</p>
+            </div>
+            <div class="service-arrow"><i data-lucide="arrow-up-right"></i></div>
+          </div>
+
+          <div class="service-item" data-bg="./assets/about-detail.png" id="service-renovation">
+            <div class="service-number">04</div>
+            <div class="service-content">
+              <h3 class="service-name">Renovation & Restoration</h3>
+              <p class="service-desc">Preservation of historic facades, structural reinforcing of architectural monuments, and modern retrofitting of heritage properties.</p>
+            </div>
+            <div class="service-arrow"><i data-lucide="arrow-up-right"></i></div>
+          </div>
+
+          <div class="service-item" data-bg="./assets/proj-comm.png" id="service-interior">
+            <div class="service-number">05</div>
+            <div class="service-content">
+              <h3 class="service-name">Interior Execution</h3>
+              <p class="service-desc">Millwork, high-end stone integration, architectural lighting execution, and premium finishes implemented with absolute precision.</p>
+            </div>
+            <div class="service-arrow"><i data-lucide="arrow-up-right"></i></div>
+          </div>
+
+          <div class="service-item" data-bg="./assets/hero-villa.png" id="service-turnkey">
+            <div class="service-number">06</div>
+            <div class="service-content">
+              <h3 class="service-name">Turnkey Construction</h3>
+              <p class="service-desc">Comprehensive project management from initial site discovery to final interior handover, guaranteeing single-point accountability.</p>
+            </div>
+            <div class="service-arrow"><i data-lucide="arrow-up-right"></i></div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Interactive background hover image container -->
+      <div class="services-dynamic-bg" id="services-hover-bg"></div>
+    </section>
+
+    <!-- Visual Banner Break -->
+    <section class="visual-break-section">
+      <div class="visual-break-bg" style="background-image: url('./assets/materials-banner.png');"></div>
+      <div class="visual-break-overlay"></div>
+      <div class="visual-break-content">
+        <span class="break-subtitle">ENDURING MATERIALITY</span>
+        <h2 class="break-title">RAW CONCRETE. BRASS DETAILS. GENERATIONAL STRENGTH.</h2>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects-section scroll-reveal">
+      <div class="section-container">
+        <div class="projects-header">
+          <div>
+            <span class="section-subtitle">OUR PORTFOLIO</span>
+            <h2 class="projects-title">FEATURED LANDMARKS</h2>
+          </div>
+          
+          <!-- Editorial Portfolio Filters -->
+          <div class="projects-filters" id="project-filters">
+            <button class="filter-btn active" data-filter="all" id="filter-all">All Works</button>
+            <button class="filter-btn" data-filter="villas" id="filter-villas">Luxury Villas</button>
+            <button class="filter-btn" data-filter="residential" id="filter-residential">Residential Communities</button>
+            <button class="filter-btn" data-filter="commercial" id="filter-commercial">Commercial Buildings</button>
+            <button class="filter-btn" data-filter="industrial" id="filter-industrial">Industrial Facilities</button>
+          </div>
+        </div>
+
+        <!-- Portfolio Showcase -->
+        <div class="projects-showcase" id="projects-grid">
+          
+          <!-- Project 1: Luxury Villa -->
+          <div class="project-card" data-category="villas" id="proj-card-1">
+            <div class="project-image-container">
+              <img src="./assets/proj-villa.png" alt="Rushikonda Cliff Villa luxury villa architectural details" class="project-img">
+              <div class="project-overlay">
+                <span class="project-tag">Luxury Villas</span>
+                <h3 class="project-card-title">Rushikonda Cliff Villa</h3>
+                <span class="project-location">Visakhapatnam, Andhra Pradesh</span>
+                <button class="project-view-details" id="btn-project-1">Explore Legacy Details</button>
+              </div>
+            </div>
+            <div class="project-meta-bottom">
+              <h3>Rushikonda Cliff Villa</h3>
+              <span>Luxury Villas — Vizag, Andhra Pradesh</span>
+            </div>
+          </div>
+
+          <!-- Project 2: Residential Community -->
+          <div class="project-card card-tall" data-category="residential" id="proj-card-2">
+            <div class="project-image-container">
+              <img src="./assets/proj-apt.png" alt="Bayview Premium Enclave modern apartments exterior layout" class="project-img">
+              <div class="project-overlay">
+                <span class="project-tag">Apartments & Residential Communities</span>
+                <h3 class="project-card-title">Bayview Premium Enclave</h3>
+                <span class="project-location">Visakhapatnam, Andhra Pradesh</span>
+                <button class="project-view-details" id="btn-project-2">Explore Legacy Details</button>
+              </div>
+            </div>
+            <div class="project-meta-bottom">
+              <h3>Bayview Premium Enclave</h3>
+              <span>Residential Communities — Vizag, AP</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Commercial Building -->
+          <div class="project-card" data-category="commercial" id="proj-card-3">
+            <div class="project-image-container">
+              <img src="./assets/proj-comm.png" alt="The V-Spire IT Tower modern office facade details" class="project-img">
+              <div class="project-overlay">
+                <span class="project-tag">Commercial Buildings</span>
+                <h3 class="project-card-title">The V-Spire IT Tower</h3>
+                <span class="project-location">Visakhapatnam, Andhra Pradesh</span>
+                <button class="project-view-details" id="btn-project-3">Explore Legacy Details</button>
+              </div>
+            </div>
+            <div class="project-meta-bottom">
+              <h3>The V-Spire IT Tower</h3>
+              <span>Commercial Buildings — Vizag, AP</span>
+            </div>
+          </div>
+
+          <!-- Project 4: Industrial Facility -->
+          <div class="project-card card-wide" data-category="industrial" id="proj-card-4">
+            <div class="project-image-container">
+              <img src="./assets/proj-ind.png" alt="Precision structural steel truss and logistics facility near Kakinada Port" class="project-img">
+              <div class="project-overlay">
+                <span class="project-tag">Industrial Facilities</span>
+                <h3 class="project-card-title">Kakinada Logistics Berth</h3>
+                <span class="project-location">Kakinada, Andhra Pradesh</span>
+                <button class="project-view-details" id="btn-project-4">Explore Legacy Details</button>
+              </div>
+            </div>
+            <div class="project-meta-bottom">
+              <h3>Kakinada Logistics Berth</h3>
+              <span>Industrial Facilities — Kakinada, AP</span>
+            </div>
+          </div>
+
+          <!-- Project 5: Commercial Plaza -->
+          <div class="project-card" data-category="commercial" id="proj-card-5">
+            <div class="project-image-container">
+              <img src="./assets/proj-comm-2.png" alt="Aurelia Commercial Plaza architectural view" class="project-img">
+              <div class="project-overlay">
+                <span class="project-tag">Commercial Buildings</span>
+                <h3 class="project-card-title">Aurelia Commercial Plaza</h3>
+                <span class="project-location">Visakhapatnam, Andhra Pradesh</span>
+                <button class="project-view-details" id="btn-project-5">Explore Legacy Details</button>
+              </div>
+            </div>
+            <div class="project-meta-bottom">
+              <h3>Aurelia Commercial Plaza</h3>
+              <span>Commercial Buildings — Vizag, AP</span>
+            </div>
+          </div>
+
+          <!-- Project 6: Luxury Villas -->
+          <div class="project-card" data-category="villas" id="proj-card-6">
+            <div class="project-image-container">
+              <img src="./assets/proj-villa-2.png" alt="Vizag Oceanfront Estates shoreline view" class="project-img">
+              <div class="project-overlay">
+                <span class="project-tag">Luxury Villas</span>
+                <h3 class="project-card-title">Vizag Oceanfront Estates</h3>
+                <span class="project-location">Visakhapatnam, Andhra Pradesh</span>
+                <button class="project-view-details" id="btn-project-6">Explore Legacy Details</button>
+              </div>
+            </div>
+            <div class="project-meta-bottom">
+              <h3>Vizag Oceanfront Estates</h3>
+              <span>Luxury Villas — Vizag, AP</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Comparison Section (Blueprint to Reality) -->
+    <section class="comparison-section scroll-reveal" id="blueprint-showcase">
+      <div class="section-container">
+        <div class="comparison-header">
+          <span class="section-subtitle center">PRECISION ALIGNMENT</span>
+          <h2 class="comparison-title center">BLUEPRINT TO REALITY</h2>
+          <p class="comparison-desc center">
+            Drag the interactive slider to reveal the underlying engineering blueprint beneath the final physical structure of the Rushikonda Cliff Villa.
+          </p>
+        </div>
+        
+        <div class="comparison-slider-container" id="comparison-slider-container">
+          <!-- Under Layer: Physical Render -->
+          <div class="comparison-image image-reality">
+            <img src="./assets/proj-villa.png" alt="Rushikonda Cliff Villa - Built Reality" class="comparison-img-item">
+            <span class="image-label reality-label">BUILT REALITY</span>
+          </div>
+          
+          <!-- Over Layer: Technical Blueprint (Resizable) -->
+          <div class="comparison-image image-blueprint" id="blueprint-layer">
+            <img src="./assets/villa-blueprint.png" alt="Rushikonda Cliff Villa - Technical Blueprint" class="comparison-img-item">
+            <span class="image-label blueprint-label">ENGINEERING BLUEPRINT</span>
+          </div>
+          
+          <!-- Drag Handle -->
+          <div class="comparison-handle" id="comparison-handle">
+            <div class="handle-line"></div>
+            <div class="handle-button">
+              <i data-lucide="chevrons-left-right"></i>
+            </div>
+            <div class="handle-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why SSVD Section -->
+    <section class="why-section scroll-reveal">
+      <div class="section-container">
+        <span class="section-subtitle center">OUR STANDARDS</span>
+        <h2 class="why-headline center">PRECISION IN EVERY DETAIL</h2>
+        
+        <div class="pillars-grid">
+          <div class="pillar-item" id="pillar-craftsmanship">
+            <div class="pillar-header">
+              <div class="pillar-icon"><i data-lucide="compass"></i></div>
+              <h3 class="pillar-title">Craftsmanship</h3>
+            </div>
+            <p class="pillar-text">
+              We employ master artisans and strict materials selectors. Every seam, alignment, and textured surface is curated to reflect high sophistication and physical permanence.
+            </p>
+          </div>
+
+          <div class="pillar-item" id="pillar-engineering">
+            <div class="pillar-header">
+              <div class="pillar-icon"><i data-lucide="cpu"></i></div>
+              <h3 class="pillar-title">Engineering Excellence</h3>
+            </div>
+            <p class="pillar-text">
+              Leveraging advanced stress testing, modeling simulations, and premium quality materials, we engineer components to safely withstand climate and seismic stresses.
+            </p>
+          </div>
+
+          <div class="pillar-item" id="pillar-transparency">
+            <div class="pillar-header">
+              <div class="pillar-icon"><i data-lucide="shield-check"></i></div>
+              <h3 class="pillar-title">Transparent Process</h3>
+            </div>
+            <p class="pillar-text">
+              From budgeting spreadsheets to real-time high-definition site camera feeds, our clients enjoy absolute visibility, zero unexpected overruns, and unmatched clarity.
+            </p>
+          </div>
+
+          <div class="pillar-item" id="pillar-delivery">
+            <div class="pillar-header">
+              <div class="pillar-icon"><i data-lucide="clock"></i></div>
+              <h3 class="pillar-title">Timely Delivery</h3>
+            </div>
+            <p class="pillar-text">
+              Our scheduling uses industrial critical-path analysis. We align teams and supply chains to ensure keys are handed over precisely on or ahead of the contract date.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Construction Process (Timeline) -->
+    <section id="process" class="process-section scroll-reveal">
+      <div class="section-container">
+        <span class="section-subtitle">THE BLUEPRINT</span>
+        <h2 class="process-title">CONSTRUCTION PROCESS</h2>
+        
+        <!-- Luxury Timeline Experience -->
+        <div class="timeline-container">
+          <!-- Central Connecting Line -->
+          <div class="timeline-line">
+            <div class="timeline-progress" id="timeline-progress-bar"></div>
+          </div>
+          
+          <div class="timeline-items">
+            
+            <div class="timeline-item scroll-reveal-timeline" id="step-01">
+              <div class="timeline-marker">01</div>
+              <div class="timeline-content">
+                <span class="timeline-num">01</span>
+                <h3 class="timeline-step-title">Discovery</h3>
+                <p class="timeline-step-desc">We begin with in-depth client dialogue to align our values with your generational goals, mapping the budget framework, scale, and land attributes.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item scroll-reveal-timeline" id="step-02">
+              <div class="timeline-marker">02</div>
+              <div class="timeline-content">
+                <span class="timeline-num">02</span>
+                <h3 class="timeline-step-title">Planning</h3>
+                <p class="timeline-step-desc">Strategic resource allocation, scheduling models, regulatory clearance paths, and rigorous cost estimation structures are created for total security.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item scroll-reveal-timeline" id="step-03">
+              <div class="timeline-marker">03</div>
+              <div class="timeline-content">
+                <span class="timeline-num">03</span>
+                <h3 class="timeline-step-title">Design</h3>
+                <p class="timeline-step-desc">Close collaboration with structural engineering brains and elite architects, optimizing materials palettes and crafting meticulous architectural blueprints.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item scroll-reveal-timeline" id="step-04">
+              <div class="timeline-marker">04</div>
+              <div class="timeline-content">
+                <span class="timeline-num">04</span>
+                <h3 class="timeline-step-title">Execution</h3>
+                <p class="timeline-step-desc">Precision-driven excavation, framing, steel erection, and premium building operations commence under the command of certified structural engineers.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item scroll-reveal-timeline" id="step-05">
+              <div class="timeline-marker">05</div>
+              <div class="timeline-content">
+                <span class="timeline-num">05</span>
+                <h3 class="timeline-step-title">Inspection</h3>
+                <p class="timeline-step-desc">Rigorous checks at every milestone. Laser scan layout verifications, materials batch laboratory reports, and code validation reviews are performed.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item scroll-reveal-timeline" id="step-06">
+              <div class="timeline-marker">06</div>
+              <div class="timeline-content">
+                <span class="timeline-num">06</span>
+                <h3 class="timeline-step-title">Handover</h3>
+                <p class="timeline-step-desc">The project transitions to operational status. We deliver files, structural manuals, mechanical guides, and keys, securing a brand-new legacy.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section scroll-reveal">
+      <div class="section-container">
+        <span class="section-subtitle center">CLIENT REFLECTIONS</span>
+        
+        <div class="testimonial-slider-container">
+          <div class="testimonial-slide active">
+            <blockquote class="testimonial-quote">
+              “SSVD delivered beyond expectations. Every detail reflected precision, quality, and professionalism. They operate at a standard that is simply rare in modern construction.”
+            </blockquote>
+            <cite class="testimonial-author">
+              <span class="author-name">Dr. G. Rama Krishna Rao</span>
+              <span class="author-title">Managing Director, GRK Infra Developers, Visakhapatnam</span>
+            </cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-bg-wrapper">
+        <div class="contact-bg" style="background-image: url('./assets/contact-bg.png');"></div>
+        <div class="contact-overlay"></div>
+      </div>
+      <div class="section-container">
+        <div class="contact-grid">
+          
+          <!-- Contact Left info -->
+          <div class="contact-info">
+            <span class="section-subtitle white">COLLABORATE</span>
+            <h2 class="contact-title">LET’S BUILD<br>SOMETHING<br>REMARKABLE</h2>
+            <p class="contact-lead-text">
+              We look forward to translating your vision into physical legacy. Reach out to schedule a private briefing or consultation with our executive engineers.
+            </p>
+            <div class="contact-details-list">
+              <div class="contact-detail-item">
+                <span class="detail-label">OFFICE HEADQUARTERS</span>
+                <span class="detail-value">19-1/1, Ganesh Nagar, Narasimha Nagar, Visakhapatnam – 530 017 (A.P.)</span>
+              </div>
+              <div class="contact-detail-item">
+                <span class="detail-label">DIRECT PHONE</span>
+                <a href="tel:+919849245377" class="detail-value link-underline" style="display:block">+91 98492 45377</a>
+                <a href="tel:+919391150433" class="detail-value link-underline" style="display:block">+91 93911 50433</a>
+              </div>
+              <div class="contact-detail-item">
+                <span class="detail-label">ELECTRONIC DISPATCH</span>
+                <a href="mailto:rajuyadav433793@gmail.com" class="detail-value link-underline">rajuyadav433793@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Right form -->
+          <div class="contact-form-container">
+            <form id="ssvd-contact-form" class="custom-premium-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-name">YOUR NAME *</label>
+                  <input type="text" id="form-name" required placeholder="Alexander Mercer">
+                </div>
+                <div class="form-group">
+                  <label for="form-email">EMAIL ADDRESS *</label>
+                  <input type="email" id="form-email" required placeholder="alex@mercer.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-phone">PHONE NUMBER</label>
+                  <input type="tel" id="form-phone" placeholder="+41 (0) 79 123 45 67">
+                </div>
+                <div class="form-group">
+                  <label for="form-project-type">PROJECT TYPE</label>
+                  <select id="form-project-type">
+                    <option value="" disabled selected>Select dynamic project scale...</option>
+                    <option value="luxury-villa">Luxury Residential Villa</option>
+                    <option value="commercial-dev">Commercial Corporate HQ</option>
+                    <option value="structural-engineering">Structural Engineering</option>
+                    <option value="turnkey-const">Turnkey Construction</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="form-message">PROJECT BRIEF & VISION *</label>
+                <textarea id="form-message" required rows="5" placeholder="Tell us about the scope, scale, architectural style, and generational vision for your project..."></textarea>
+              </div>
+              
+              <div class="form-footer">
+                <p class="form-disclaimer">* Required credentials to initiate a formal dossier.</p>
+                <button type="submit" class="btn-submit" id="btn-submit-contact">
+                  <span class="submit-text">Initiate Private Consultation</span>
+                  <span class="submit-arrow"><i data-lucide="arrow-right"></i></span>
+                </button>
+              </div>
+            </form>
+            <div id="contact-form-success" class="form-success-message hidden">
+              <i data-lucide="shield-check" class="success-icon"></i>
+              <h3>Dossier Submitted Successfully</h3>
+              <p>We appreciate the gravity of your architectural ambitions. A senior engineering manager will review your submission and contact you within 24 hours to schedule a confidential review.</p>
+              <button id="btn-reset-form" class="btn btn-secondary">Submit Another Inquiry</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Premium Portfolio Modal -->
+  <div class="project-modal" id="portfolio-modal">
+    <div class="modal-backdrop" id="modal-close-area"></div>
+    <div class="modal-container">
+      <button class="modal-close" id="btn-modal-close" aria-label="Close Project Modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-content-grid">
+        <div class="modal-image-panel">
+          <img id="modal-project-img" src="" alt="Project Image" class="modal-img">
+        </div>
+        <div class="modal-info-panel">
+          <span class="modal-subtitle" id="modal-project-tag">PROJECT BRIEF</span>
+          <h2 class="modal-title" id="modal-project-title">PROJECT NAME</h2>
+          <div class="modal-meta-grid">
+            <div>
+              <span class="meta-label">LOCATION</span>
+              <span class="meta-val" id="modal-project-location">Location, Country</span>
+            </div>
+            <div>
+              <span class="meta-label">TIMELINE</span>
+              <span class="meta-val" id="modal-project-timeline">24 Months</span>
+            </div>
+            <div>
+              <span class="meta-label">SCALE</span>
+              <span class="meta-val" id="modal-project-scale">45,000 sq ft</span>
+            </div>
+          </div>
+          <hr class="modal-divider">
+          <p class="modal-description" id="modal-project-description">
+            Detailed case study information goes here...
+          </p>
+          <div class="modal-cta-box">
+            <a href="#contact" class="btn btn-primary" id="btn-modal-contact">Discuss Similar Scope</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="luxury-footer">
+    <div class="section-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2 class="footer-logo">SSVD</h2>
+          <p class="footer-brand-tagline">BUILDING LEGACIES FOR GENERATIONS</p>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-links-col">
+            <span class="footer-col-title">NAVIGATION</span>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-links-col">
+            <span class="footer-col-title">CONTACT INFORMATION</span>
+            <span class="footer-info-item">Direct: +91 98492 45377</span>
+            <span class="footer-info-item">Direct: +91 93911 50433</span>
+            <span class="footer-info-item">Inquiries: rajuyadav433793@gmail.com</span>
+            <span class="footer-info-item">Office: Narasimha Nagar, Visakhapatnam</span>
+          </div>
+          <div class="footer-links-col">
+            <span class="footer-col-title">SOCIAL PORTFOLIOS</span>
+            <a href="#home" class="link-underline">LinkedIn</a>
+            <a href="#home" class="link-underline">Instagram</a>
+            <a href="#home" class="link-underline">Vimeo</a>
+            <a href="#home" class="link-underline">Architectural Digest</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SSVD Constructions. All structural rights reserved. Crafted for enduring perfection.</p>
+        <p class="footer-bottom-credit">Aesthetic Design & Engineering Legacy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main.js" type="module"></script>
+</body>
+</html>
