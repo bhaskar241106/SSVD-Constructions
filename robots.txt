@@ -1,0 +1,8 @@
+# robots.txt – SSVD Constructions
+# Allow all search engine crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bhaskar241106.github.io/SSVD-Constructions/sitemap.xml
