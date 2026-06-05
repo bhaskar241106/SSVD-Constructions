@@ -647,6 +647,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+
+
+
   // Add scroll event listener
   window.addEventListener('scroll', () => {
     requestAnimationFrame(handleSpatialZoom);
