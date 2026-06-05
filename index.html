@@ -496,6 +496,8 @@
           </div>
         </div>
       </div>
+    </section>
+
     <!-- Interactive Space Inspector Section -->
     <section class="inspector-section scroll-reveal" id="space-inspector">
       <div class="section-container">
@@ -504,236 +506,78 @@
           <span class="section-subtitle center">SPATIAL CHOREOGRAPHY</span>
           <h2 class="inspector-title center">INTERACTIVE SPACE INSPECTOR</h2>
           <p class="inspector-desc-lead center">
-            Select a property scale and click on different blueprint layout spaces. Toggle the technical layers below to inspect structural columns, tiles configurations, or electrical conduit wiring maps.
+            Click on any room within the first-floor blueprint layout of the Rushikonda Cliff Villa to inspect its dimensions, materials profile, and 8K visual execution.
           </p>
         </div>
-
-        <!-- Property & Layer Selectors -->
-        <div class="inspector-controls-wrapper">
-          <div class="property-selectors" id="property-selectors">
-            <button class="selector-tab active" data-property="villa" id="tab-prop-villa">CLIFF VILLA (ESTATE)</button>
-            <button class="selector-tab" data-property="duplex" id="tab-prop-duplex">SMART DUPLEX (MEDIUM)</button>
-            <button class="selector-tab" data-property="house" id="tab-prop-house">INDIVIDUAL HOME (COMPACT)</button>
-          </div>
-          <div class="layer-selectors" id="layer-selectors">
-            <button class="layer-tab active" data-layer="architectural" id="tab-layer-arch">
-              <i data-lucide="home" class="tab-icon"></i> SPACES
-            </button>
-            <button class="layer-tab" data-layer="structural" id="tab-layer-struct">
-              <i data-lucide="grid" class="tab-icon"></i> TILES & COLUMNS
-            </button>
-            <button class="layer-tab" data-layer="electrical" id="tab-layer-elec">
-              <i data-lucide="zap" class="tab-icon"></i> ELECTRICAL WIRING
-            </button>
-          </div>
-        </div>
         
-        <div class="inspector-grid show-architectural" id="inspector-grid-parent">
+        <div class="inspector-grid">
           
           <!-- Blueprint Column -->
           <div class="blueprint-col">
-            <span class="column-title" id="blueprint-col-title">CLIFF VILLA BLUEPRINT (LVL 01)</span>
-            
+            <span class="column-title">ARCHITECTURAL BLUEPRINT (LVL 01)</span>
             <div class="blueprint-wrapper">
-              
-              <!-- 1. CLIFF VILLA SVG -->
-              <svg viewBox="0 0 500 400" class="blueprint-svg active-blueprint" id="svg-villa">
+              <svg viewBox="0 0 500 400" class="blueprint-svg" id="blueprint-floorplan">
                 <!-- Grid Lines background -->
                 <defs>
-                  <pattern id="grid-pattern-villa" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
                     <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26, 26, 26, 0.04)" stroke-width="0.5" />
                   </pattern>
-                  <!-- Tiles Pattern -->
-                  <pattern id="tile-pattern-villa" width="30" height="30" patternUnits="userSpaceOnUse">
-                    <rect width="30" height="30" fill="none" stroke="rgba(176, 141, 87, 0.2)" stroke-width="0.5" />
-                  </pattern>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#grid-pattern-villa)" />
+                <rect width="100%" height="100%" fill="url(#grid-pattern)" />
                 
-                <!-- Structural Layer (Tiles & Columns) -->
-                <g class="blueprint-layer structural-layer">
-                  <!-- Tiles Grid -->
-                  <rect x="20" y="20" width="460" height="360" fill="url(#tile-pattern-villa)" />
-                  <!-- Columns (load bearing markers) -->
-                  <rect x="35" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="215" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="455" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="35" y="195" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="215" y="245" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="455" y="245" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="35" y="355" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="215" y="355" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="455" y="355" width="10" height="10" fill="var(--color-text-primary)" />
-                </g>
-
-                <!-- Electrical Layer (Wiring conduits) -->
-                <g class="blueprint-layer electrical-layer">
-                  <!-- Wiring paths (neon conduit colors) -->
-                  <path d="M 130 120 L 250 120 L 250 90 M 250 90 L 345 90 L 345 140" fill="none" stroke="#E05B35" stroke-dasharray="3,3" stroke-width="1.5" />
-                  <path d="M 130 120 L 130 285 L 345 285" fill="none" stroke="#35B0E0" stroke-dasharray="3,3" stroke-width="1.5" />
-                  <!-- Fixtures -->
-                  <circle cx="130" cy="120" r="5" fill="#E05B35" />
-                  <circle cx="345" cy="140" r="5" fill="#35B0E0" />
-                  <circle cx="345" cy="310" r="5" fill="#35B0E0" />
-                  <!-- Switch board markers -->
-                  <rect x="245" y="115" width="10" height="10" fill="#B08D57" />
-                </g>
-
                 <!-- Outer boundary wall -->
-                <rect x="20" y="20" width="460" height="360" fill="none" stroke="rgba(26, 26, 26, 0.15)" stroke-width="1" stroke-dasharray="4,4" />
+                <rect x="20" y="20" width="460" height="360" fill="none" stroke="rgba(26, 26, 26, 0.1)" stroke-width="1" stroke-dasharray="4,4" />
 
                 <!-- Room 1: Living Hall -->
                 <g class="floor-room active" id="room-living" data-room="living">
                   <rect x="230" y="40" width="230" height="200" class="room-polygon" />
                   <text x="345" y="140" class="room-label">01 / LIVING HALL</text>
-                  <path d="M 240 50 L 300 50 M 240 60 L 300 60 M 240 70 L 300 70 M 240 80 L 300 80 M 240 90 L 300 90" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" fill="none" class="blueprint-detail" />
+                  <!-- Staircase details in Living Hall -->
+                  <path d="M 240 50 L 300 50 M 240 60 L 300 60 M 240 70 L 300 70 M 240 80 L 300 80 M 240 90 L 300 90" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" fill="none" />
                 </g>
 
                 <!-- Room 2: Master Suite -->
                 <g class="floor-room" id="room-master" data-room="master">
                   <rect x="40" y="40" width="180" height="160" class="room-polygon" />
                   <text x="130" y="120" class="room-label">02 / MASTER SUITE</text>
-                  <rect x="70" y="90" width="40" height="50" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" class="blueprint-detail" />
+                  <!-- Bed outline details in Master Suite -->
+                  <rect x="70" y="90" width="40" height="50" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" />
+                  <rect x="70" y="95" width="10" height="15" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" />
+                  <rect x="70" y="120" width="10" height="15" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" />
                 </g>
 
                 <!-- Room 3: Cantilever Deck & Pool -->
                 <g class="floor-room" id="room-pool" data-room="pool">
                   <rect x="230" y="250" width="230" height="110" class="room-polygon" />
                   <text x="345" y="310" class="room-label">03 / CANTILEVER POOL</text>
-                  <path d="M 250 330 Q 260 325 270 330 T 290 330 T 310 330 T 330 330" fill="none" stroke="rgba(176, 141, 87, 0.18)" stroke-width="1" class="blueprint-detail" />
+                  <!-- Water ripples detail in pool -->
+                  <path d="M 250 330 Q 260 325 270 330 T 290 330 T 310 330 T 330 330" fill="none" stroke="rgba(176, 141, 87, 0.18)" stroke-width="1" />
+                  <path d="M 260 340 Q 270 335 280 340 T 300 340 T 320 340 T 340 340" fill="none" stroke="rgba(176, 141, 87, 0.18)" stroke-width="1" />
                 </g>
 
                 <!-- Room 4: Sunset Terrace Lounge -->
                 <g class="floor-room" id="room-terrace" data-room="terrace">
                   <rect x="40" y="210" width="180" height="150" class="room-polygon" />
                   <text x="130" y="285" class="room-label">04 / SUNSET TERRACE</text>
-                  <circle cx="130" cy="315" r="20" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" class="blueprint-detail" />
+                  <!-- Terrace seating outline details -->
+                  <circle cx="130" cy="315" r="20" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" />
+                  <circle cx="100" cy="315" r="6" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" />
+                  <circle cx="160" cy="315" r="6" fill="none" stroke="rgba(26, 26, 26, 0.12)" stroke-width="1" />
+                </g>
+                
+                <!-- Dimension lines and arrows for technical feel -->
+                <g stroke="rgba(26, 26, 26, 0.1)" stroke-width="0.5">
+                  <!-- horizontal top line -->
+                  <line x1="40" y1="30" x2="460" y2="30" />
+                  <!-- vertical left line -->
+                  <line x1="30" y1="40" x2="30" y2="360" />
+                  <!-- Tick marks -->
+                  <line x1="40" y1="27" x2="40" y2="33" />
+                  <line x1="220" y1="27" x2="220" y2="33" />
+                  <line x1="230" y1="27" x2="230" y2="33" />
+                  <line x1="460" y1="27" x2="460" y2="33" />
                 </g>
               </svg>
-
-              <!-- 2. SMART DUPLEX SVG -->
-              <svg viewBox="0 0 500 400" class="blueprint-svg" id="svg-duplex">
-                <defs>
-                  <pattern id="grid-pattern-duplex" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26, 26, 26, 0.04)" stroke-width="0.5" />
-                  </pattern>
-                  <pattern id="tile-pattern-duplex" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <rect width="20" height="20" fill="none" stroke="rgba(176, 141, 87, 0.15)" stroke-width="0.5" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid-pattern-duplex)" />
-
-                <!-- Structural Layer -->
-                <g class="blueprint-layer structural-layer">
-                  <rect x="20" y="20" width="460" height="360" fill="url(#tile-pattern-duplex)" />
-                  <!-- Structural Columns -->
-                  <rect x="35" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="225" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="455" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="35" y="215" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="265" y="165" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="455" y="355" width="10" height="10" fill="var(--color-text-primary)" />
-                </g>
-
-                <!-- Electrical Layer -->
-                <g class="blueprint-layer electrical-layer">
-                  <!-- Wiring paths (Duplex conduits) -->
-                  <path d="M 130 130 L 350 100 L 360 260" fill="none" stroke="#E05B35" stroke-dasharray="3,3" stroke-width="1.5" />
-                  <path d="M 150 295 L 365 265" fill="none" stroke="#35B0E0" stroke-dasharray="3,3" stroke-width="1.5" />
-                  <circle cx="130" cy="130" r="5" fill="#E05B35" />
-                  <circle cx="350" cy="100" r="5" fill="#E05B35" />
-                  <circle cx="365" cy="265" r="5" fill="#35B0E0" />
-                </g>
-
-                <rect x="20" y="20" width="460" height="360" fill="none" stroke="rgba(26, 26, 26, 0.15)" stroke-width="1" stroke-dasharray="4,4" />
-
-                <!-- Room 1: Duplex Living Lounge -->
-                <g class="floor-room" id="room-dup-living" data-room="dup-living">
-                  <rect x="40" y="40" width="180" height="180" class="room-polygon" />
-                  <text x="130" y="130" class="room-label">01 / DUPLEX LOUNGE</text>
-                </g>
-
-                <!-- Room 2: Modular Kitchen -->
-                <g class="floor-room" id="room-dup-kitchen" data-room="dup-kitchen">
-                  <rect x="240" y="40" width="220" height="120" class="room-polygon" />
-                  <text x="350" y="100" class="room-label">02 / MODULAR KITCHEN</text>
-                </g>
-
-                <!-- Room 3: Master Bed -->
-                <g class="floor-room" id="room-dup-master" data-room="dup-master">
-                  <rect x="40" y="235" width="220" height="125" class="room-polygon" />
-                  <text x="150" y="300" class="room-label">03 / MASTER BED</text>
-                </g>
-
-                <!-- Room 4: Duplex Balcony -->
-                <g class="floor-room" id="room-dup-balcony" data-room="dup-balcony">
-                  <rect x="270" y="175" width="190" height="185" class="room-polygon" />
-                  <text x="365" y="270" class="room-label">04 / BALCONY DECK</text>
-                </g>
-              </svg>
-
-              <!-- 3. INDIVIDUAL HOME SVG -->
-              <svg viewBox="0 0 500 400" class="blueprint-svg" id="svg-house">
-                <defs>
-                  <pattern id="grid-pattern-house" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26, 26, 26, 0.04)" stroke-width="0.5" />
-                  </pattern>
-                  <pattern id="tile-pattern-house" width="25" height="25" patternUnits="userSpaceOnUse">
-                    <rect width="25" height="25" fill="none" stroke="rgba(176, 141, 87, 0.15)" stroke-width="0.5" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid-pattern-house)" />
-
-                <!-- Structural Layer -->
-                <g class="blueprint-layer structural-layer">
-                  <rect x="20" y="20" width="460" height="360" fill="url(#tile-pattern-house)" />
-                  <!-- Structural Columns -->
-                  <rect x="35" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="195" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="455" y="35" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="195" y="205" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="35" y="355" width="10" height="10" fill="var(--color-text-primary)" />
-                  <rect x="455" y="355" width="10" height="10" fill="var(--color-text-primary)" />
-                </g>
-
-                <!-- Electrical Layer -->
-                <g class="blueprint-layer electrical-layer">
-                  <!-- Wiring paths (Individual conduits) -->
-                  <path d="M 115 90 L 330 120 M 115 255 L 330 285" fill="none" stroke="#E05B35" stroke-dasharray="3,3" stroke-width="1.5" />
-                  <path d="M 115 90 L 115 255" fill="none" stroke="#35B0E0" stroke-dasharray="3,3" stroke-width="1.5" />
-                  <circle cx="115" cy="90" r="5" fill="#E05B35" />
-                  <circle cx="330" cy="120" r="5" fill="#E05B35" />
-                  <circle cx="115" cy="255" r="5" fill="#35B0E0" />
-                  <circle cx="330" cy="285" r="5" fill="#35B0E0" />
-                </g>
-
-                <rect x="20" y="20" width="460" height="360" fill="none" stroke="rgba(26, 26, 26, 0.15)" stroke-width="1" stroke-dasharray="4,4" />
-
-                <!-- Room 1: Entrance Vestibule -->
-                <g class="floor-room" id="room-ind-entrance" data-room="ind-entrance">
-                  <rect x="40" y="40" width="150" height="100" class="room-polygon" />
-                  <text x="115" y="95" class="room-label">01 / ENTRANCE HALL</text>
-                </g>
-
-                <!-- Room 2: Compact Bed -->
-                <g class="floor-room" id="room-ind-bed" data-room="ind-bed">
-                  <rect x="200" y="40" width="260" height="160" class="room-polygon" />
-                  <text x="330" y="125" class="room-label">02 / PRIMARY BEDROOM</text>
-                </g>
-
-                <!-- Room 3: Dining Area -->
-                <g class="floor-room" id="room-ind-dining" data-room="ind-dining">
-                  <rect x="40" y="150" width="150" height="210" class="room-polygon" />
-                  <text x="115" y="260" class="room-label">03 / DINING AREA</text>
-                </g>
-
-                <!-- Room 4: Utility Hub / Electrical -->
-                <g class="floor-room" id="room-ind-utility" data-room="ind-utility">
-                  <rect x="200" y="210" width="260" height="150" class="room-polygon" />
-                  <text x="330" y="290" class="room-label">04 / UTILITY & WIRING</text>
-                </g>
-              </svg>
-
             </div>
             <div class="blueprint-legend">
               <span class="legend-item"><span class="legend-box legend-active"></span> SELECTED SPACE</span>
